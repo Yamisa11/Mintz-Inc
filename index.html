@@ -2,12 +2,6 @@
 <html lang="en">
  <script>
           var dataLayer = [{
-            pageName : "Home",
-            pageURL : "https://mintz.onrender.com/",
-            loginStatus : "not logged",
-            newVisitor : "false",
-            formName : "",
-            language : "English",
             product: {id : "1" , name: "Nike Dunk Low Cacao", price : 6499},
         }]
     </script>
@@ -140,6 +134,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </li>
       {{/each}}
     </script>
+   <script>
+    let shoe_data = JSON.parse(localStorage.getItem("cartItems"))
+    console.log(shoe_data)
+   </script>
   </head>
   <body>
     <div class="overlay"></div>
