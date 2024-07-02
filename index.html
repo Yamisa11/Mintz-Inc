@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
- <script>
+
+  <head>
+    <script>
           var dataLayer = [{
             product: {id : "1" , name: "Nike Dunk Low Cacao", price : 6499},
         }]
     </script>
-  <head>
     <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -134,10 +135,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </li>
       {{/each}}
     </script>
-   <script>
-    let shoe_data = JSON.parse(localStorage.getItem("cartItems"))
-    console.log(shoe_data)
-   </script>
+   
   </head>
   <body>
     <div class="overlay"></div>
