@@ -131,7 +131,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </li>
       {{/each}}
     </script>
-   
+    <script>
+    let shoe_data = JSON.parse(localStorage.getItem("cartItems"))
+    console.log(shoe_data)
+   </script>
   </head>
   <body>
     <div class="overlay"></div>
