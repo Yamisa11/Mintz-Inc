@@ -29,6 +29,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <title>Mintz Inc</title>
 
+  <script>
+    let shoe_data = JSON.parse(localStorage.getItem("cartItems"))
+    console.log(shoe_data)
+      let last = shoe_data.length() - 1
+
+    let dataLayer = [{
+      product : shoe_data[last]
+    }]
+
+    console.log(dataLayer)
+   </script>
+    
     <script type="text/x-template" id="categoryTemplate">
       <div class="filter_container">
         <div class="flex_menu">
@@ -131,10 +143,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </li>
       {{/each}}
     </script>
-    <script>
-    let shoe_data = JSON.parse(localStorage.getItem("cartItems"))
-    console.log(shoe_data)
-   </script>
+    
   </head>
   <body>
     <div class="overlay"></div>
