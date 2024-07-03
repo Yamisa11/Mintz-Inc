@@ -2,6 +2,52 @@
 <html lang="en">
 
   <head>
+    <script>
+  window.dataLayer = window.dataLayer || [];
+</script>
+
+    <script>
+  function addToCart(product) {
+    // Sample product data
+    const productData = {
+      name: product.name,
+      id: product.id,
+      price: product.price,
+      brand: product.brand,
+      category: product.category,
+      variant: product.variant,
+      quantity: product.quantity
+    };
+
+    // Push product data to the data layer
+    window.dataLayer.push({
+      event: 'addToCart',
+      ecommerce: {
+        currencyCode: 'USD', // Currency code
+        add: { // 'add' actionFieldObject measures.
+          products: [productData]
+        }
+      }
+    });
+
+    console.log('Product added to cart:', dataLayer);
+  }
+
+  // Example usage
+  document.getElementById('add-to-cart-button').addEventListener('click', function() {
+    const product = {
+      name: 'Running Shoes',
+      id: '12345',
+      price: '49.99',
+      brand: 'BrandName',
+      category: 'Footwear',
+      variant: 'Red',
+      quantity: 1
+    };
+    addToCart(product);
+  });
+</script>
+
     
     <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -29,17 +75,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <title>Mintz Inc</title>
 
-  <script>
-    let shoe_data = JSON.parse(localStorage.getItem("cartItems")) || []
-    console.log(shoe_data)
-      let last = shoe_data.length - 1
-
-    let dataLayer = [{
-      product : shoe_data[last]
-    }]
-
-    console.log(dataLayer)
-   </script>
+ 
     
     <script type="text/x-template" id="categoryTemplate">
       <div class="filter_container">
