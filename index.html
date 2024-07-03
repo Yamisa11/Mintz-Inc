@@ -30,9 +30,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <title>Mintz Inc</title>
 
   <script>
-    let shoe_data = JSON.parse(localStorage.getItem("cartItems"))
+    let shoe_data = JSON.parse(localStorage.getItem("cartItems")) || []
     console.log(shoe_data)
-      let last = shoe_data.length() - 1
+      let last = shoe_data.length - 1
 
     let dataLayer = [{
       product : shoe_data[last]
