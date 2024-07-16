@@ -360,11 +360,12 @@ if (shoeFormModal.classList.contains("visible")) {
         updateCart();
         DisplayShoeTemplate(shoe_data);
         addToCartButton();
+        window.location.reload()
       } else {
         ("Item is out of stock");
       }
     }
-     window.location.reload()
+     
   }
 
   function addToCartButton() {
