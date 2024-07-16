@@ -2,16 +2,29 @@
 <html lang="en">
 
   <head>
-    <script>
+  <script>
+      const itemsInCart =  JSON.parse(localStorage.getItem('cartItems'))|| []
+      console.log(itemsInCart);
+      let numItems = itemsInCart.length -1
+      console.log(numItems)
+      let theProd = itemsInCart[numItems]
+      console.log(theProd)
   window.dataLayer = window.dataLayer || [];
        window.dataLayer.push({
       event: 'addToCart',
       ecommerce: {
         currencyCode: 'ZAR',
-       products: {{productInCart}}
+       product: {
+        id: theProd.id,
+        name : theProd.name,
+        price: theProd.price,
+        size: theProd.size
+       }
+       
       }
     });
 </script>
+
 
     
     <!-- Google Tag Manager -->
