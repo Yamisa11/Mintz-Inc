@@ -364,6 +364,7 @@ if (shoeFormModal.classList.contains("visible")) {
         ("Item is out of stock");
       }
     }
+     window.location.reload()
   }
 
   function addToCartButton() {
