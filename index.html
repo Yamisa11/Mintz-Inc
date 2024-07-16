@@ -144,6 +144,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </li>
       {{/each}}
     </script>
+     <script>
+    let shoe_data = JSON.parse(localStorage.getItem("cartItems"))
+    console.log(shoe_data)
+   </script>
     
   </head>
   <body>
@@ -178,7 +182,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <div class="add_shoes_container">
         <button class="support">
           <img id="question" src="./images/question.png" />
-          <span>Support</span>
+          <span>Can't find a shoe? Enquire now!</span>
         </button>
         <button class="cart_container">
           <img class="cart_img" src="./images/shopping-cart.png" />
@@ -193,76 +197,82 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </button>
             <h2>👟 Add Your Shoes 👟</h2>
             <div class="modal-content">
-              <form id="shoeForm">
-                <label for="shoeName">Shoe Name:</label><br />
-                <input
-                  type="text"
-                  id="shoeName"
-                  name="shoeName"
-                  placeholder="Shoe Name"
-                  required
-                /><br />
-                <label for="shoeColor">Color:</label><br />
-                <input
-                  type="text"
-                  id="shoeColor"
-                  name="shoeColor"
-                  placeholder="Color"
-                  required
-                /><br />
+          
 
-                <label for="shoeBrand">Brand:</label><br />
-                <input
-                  type="text"
-                  id="shoeBrand"
-                  name="shoeBrand"
-                  placeholder="Brand"
-                  required
-                /><br />
-                <div class="number_input_container">
-                  <div>
-                    <label for="shoeSize">Size:</label><br />
-                    <input
-                      type="number"
-                      id="shoeSize"
-                      name="shoeSize"
-                      placeholder="Size"
-                      required
-                    /><br />
-                  </div>
-                  <div>
-                    <label for="shoePrice">Price:</label><br />
-                    <input
-                      type="number"
-                      id="shoePrice"
-                      name="shoePrice"
-                      placeholder="price"
-                      required
-                    /><br />
-                  </div>
-                </div>
+  <script>
+    function handleFormSubmit(event) {
+      event.preventDefault(); // Prevent the default form submission
+      // Perform any form validation or data handling here if needed
 
-            
-                <label for="shoeImage">Image:</label><br />
-                <input
-                  type="text"
-                  id="shoeImage"
-                  name="shoeImage"
-                  placeholder="place image link here"
-                  required
-                /><br />
-                <div class="stock_container">
-                <label for="shoePrice">Stock:</label><br />
-                <input
-                  type="number"
-                  id="shoeStock"
-                  name="shoeStock"
-                  placeholder="stock"
-                  required
-                /><br />
-              </div>
-                <input type="submit" value="Submit" class="add_shoe_submit" />
-              </form>
+      // Redirect to addSuccess.html
+      window.location.href = "addSuccess.html";
+    }
+  </script>
+</head>
+<body>
+  <form id="shoeForm" onsubmit="handleFormSubmit(event)">
+    <label for="shoeName">Shoe Name:</label><br />
+    <input
+      type="text"
+      id="shoeName"
+      name="shoeName"
+      placeholder="Shoe Name"
+      required
+    /><br />
+    <label for="shoeColor">Color:</label><br />
+    <input
+      type="text"
+      id="shoeColor"
+      name="shoeColor"
+      placeholder="Color"
+      required
+    /><br />
+
+    <label for="shoeBrand">Brand:</label><br />
+    <input
+      type="text"
+      id="shoeBrand"
+      name="shoeBrand"
+      placeholder="Brand"
+      required
+    /><br />
+    <div class="number_input_container">
+      <div>
+        <label for="shoeSize">Size:</label><br />
+        <input
+          type="number"
+          id="shoeSize"
+          name="shoeSize"
+          placeholder="Size"
+          required
+        /><br />
+      </div>
+      <div>
+        <label for="theEmail">Email:</label><br />
+        <input
+          type="email"
+          id="theEmail"
+          name="theEmail"
+          placeholder="email"
+          required
+        /><br />
+      </div>
+    </div>
+
+    <label for="shoeImage">Image:</label><br />
+    <input
+      type="text"
+      id="shoeImage"
+      name="shoeImage"
+      placeholder="place image link here"
+      required
+    /><br />
+    <div class="stock_container"></div>
+    <input type="submit" value="Submit" class="add_shoe_submit" />
+  </form>
+
+
+              
             </div>
           </div>
         </div>
@@ -298,3 +308,4 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
   </body>
 </html>
+
